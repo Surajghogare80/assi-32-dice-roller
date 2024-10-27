@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./dice.png" type="img">
+    <title>Dice roller</title>
+    <style>
+        body{
+            margin: 0%;
+            padding: 0%;
+            background-color:#629584;
+        }
+        .container{
+           
+            border: 3px solid #243642;
+            width: 300px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #E2F1E7;
+           
+            text-align: center;
+            margin: 200px auto;
+        }
+       .btn{
+        border: none;
+        border-radius: 30px;
+        width: 30%;
+        padding: 15px;
+        margin-top: 30px;
+        cursor: pointer;
+        background-color: #243642;
+        color: white;
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">Dice Roller</h1>
+        <br>
+        <img src="./dice.png" height="150px " id="img">
+        <br>
+        <button type="button" class="btn" onclick="diceroll()">
+        Click
+
+
+        </button>
+
+    </div>
+
+    <script>
+        function resetdice()
+        {
+            const dice = document.getElementById('img'); 
+            dice.src = 'dice.png'
+        }
+        function diceroll(){
+
+        const min = 1;
+        const max = 6;
+
+        const randomno = Math.round(Math.random() * (max-min)) + min;
+
+        const dice = document.getElementById('img');
+
+        if(randomno==1){
+            dice.src = 'one.png'
+        }
+        else if(randomno==2){
+            dice.src = 'two.png'
+        }
+        else if(randomno==3){
+            dice.src ='three.png'
+        }
+        else if(randomno==4){
+            dice.src='four.png'
+        }
+        else if(randomno==5){
+            dice.src='five.png'
+        }
+        else if(randomno==6){
+            dice.src='six.png'
+        }
+        setTimeout(resetdice,2000)
+
+        
+        }
+        
+
+
+    </script>
+  
+    
+</body>
+</html>
